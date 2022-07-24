@@ -1,0 +1,15 @@
+name: MoBoxPoint
+version: 1.0-SNAPSHOT
+main: org.mossmc.mosscg.MoBoxPoint.Main
+author: MossCG
+description: A plugin by MossCG for MoBoxMC.
+commands:
+  moboxpoint:
+    description: 主指令
+permissions:
+  moboxpoint.add:
+    description: 添加积分权限
+    default: op
+  moboxpoint.get:
+    description: 获取积分权限
+    default: op
