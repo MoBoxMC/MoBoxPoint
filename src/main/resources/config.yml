@@ -7,10 +7,10 @@
 
 #Mysql配置
 sqlAddress: "127.0.0.1"
-sqlPort: "3389"
+sqlPort: "3306"
 sqlUsername: "root"
 sqlPassword: "123456"
-sqlDatabase: "MoBoxMC"
+sqlDatabase: "Minecraft"
 sqlTable: "MoBoxPoint"
 
 #Debug模式

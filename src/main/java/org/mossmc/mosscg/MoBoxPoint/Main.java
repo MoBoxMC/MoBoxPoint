@@ -10,6 +10,7 @@ import org.mossmc.mosscg.MoBoxCore.Info.InfoGroupBackend;
 import org.mossmc.mosscg.MoBoxPoint.Cache.CacheListener;
 import org.mossmc.mosscg.MoBoxPoint.Command.CommandAdd;
 import org.mossmc.mosscg.MoBoxPoint.Command.CommandGet;
+import org.mossmc.mosscg.MoBoxPoint.Mysql.MysqlTable;
 import org.mossmc.mosscg.MoBoxPoint.PlaceHolder.PlaceHolderMain;
 
 import java.util.logging.Logger;
@@ -37,6 +38,9 @@ public class Main extends JavaPlugin {
             logger.info("检测到PlaceHolderAPI插件，变量功能已启用！");
             new PlaceHolderMain().register();
         }
+        logger.info("正在初始化数据库");
+        MysqlTable.checkTable();
+        logger.info("数据库初始化完成");
     }
 
     @Override
