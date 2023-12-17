@@ -1,6 +1,8 @@
 package org.mossmc.mosscg.MoBoxPoint.Mysql;
 
 import com.alibaba.fastjson.JSONObject;
+import org.bukkit.scheduler.BukkitRunnable;
+import org.mossmc.mosscg.MoBoxPoint.BasicInfo;
 import org.mossmc.mosscg.MoBoxPoint.Cache.CacheUser;
 import org.mossmc.mosscg.MoBoxPoint.Main;
 
@@ -10,6 +12,15 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class MysqlUpdateData {
+    public static void asyncUpdateData(JSONObject data,String player) {
+        BukkitRunnable runnable = new BukkitRunnable() {
+            @Override
+            public void run() {
+                updateData(data, player);
+            }
+        };
+        runnable.runTaskAsynchronously(BasicInfo.instance);
+    }
     public static void updateData(JSONObject data,String player) {
         String sqlCheckExist = "select * from "+Main.getConfig.getString("sqlTable")+" where name='"+player+"'";
         String sqlUpdate = "update "+Main.getConfig.getString("sqlTable")+" set data='"+data+"' WHERE name='"+player+"'";;

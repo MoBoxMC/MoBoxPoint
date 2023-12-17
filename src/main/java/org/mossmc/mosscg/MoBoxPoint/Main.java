@@ -25,6 +25,7 @@ public class Main extends JavaPlugin {
         getConfig().options().copyDefaults(true);
         logger = getLogger();
         getConfig = getConfig();
+        BasicInfo.instance = this;
     }
 
     @Override

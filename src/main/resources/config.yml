@@ -13,6 +13,9 @@ sqlPassword: "123456"
 sqlDatabase: "Minecraft"
 sqlTable: "MoBoxPoint"
 
+#保存模式（UUID/NAME）
+saveMode: NAME
+
 #Debug模式
 #此模式开启的话会显示很多没用的信息
 debug: false

@@ -19,7 +19,7 @@ public class UserUpdate {
             return;
         }
         DataUpdate.addScore(jsonObject,key,score);
-        MysqlUpdateData.updateData(jsonObject,name);
+        MysqlUpdateData.asyncUpdateData(jsonObject,name);
     }
 
     public static void userAddScore(UUID uuid, String key, int score) {
@@ -30,6 +30,6 @@ public class UserUpdate {
             return;
         }
         DataUpdate.addScore(jsonObject,key,score);
-        MysqlUpdateData.updateData(jsonObject,player.getName());
+        MysqlUpdateData.asyncUpdateData(jsonObject,player.getName());
     }
 }
